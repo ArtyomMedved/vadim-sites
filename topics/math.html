@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Математические принципы</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+      }
+
+      header {
+        text-align: center;
+        padding: 15px;
+      }
+
+      main {
+        padding: 20px;
+        text-align: center;
+      }
+
+      /* Ограничиваем ширину блоков */
+      .content,
+      .geometry-simulation,
+      .proportion-diagram,
+      .calculator {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Адаптация Canvas */
+      canvas {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 500px;
+        border: 1px solid black;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Адаптация SVG */
+      svg {
+        width: 100%;
+        height: auto;
+        max-width: 500px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      /* Стили кнопок */
+      .controls,
+      .calculator {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      button {
+        width: 90%;
+        max-width: 300px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      input {
+        width: 80%;
+        max-width: 250px;
+        padding: 8px;
+        font-size: 16px;
+        text-align: center;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Математические принципы в архитектуре</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../topics.html">Разделы</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="content">
+        <h2>Математические принципы в архитектуре</h2>
+        <p>
+          Архитекторы на протяжении веков использовали различные математические
+          методы:
+        </p>
+
+        <ul>
+          <li><strong>Золотое сечение</strong> – гармоничные пропорции.</li>
+          <li><strong>Фракталы</strong> – повторяющиеся узоры.</li>
+          <li><strong>Симметрия</strong> – баланс и эстетика.</li>
+          <li>
+            <strong>Параметрический дизайн</strong> – современные технологии и
+            вычислительные методы.
+          </li>
+        </ul>
+      </section>
+      <hr />
+
+      <section class="geometry-simulation">
+        <h2>Симуляция построения геометрических фигур</h2>
+        <canvas id="geometryCanvas" width="500" height="500"></canvas>
+        <div class="controls">
+          <button onclick="drawCircle()">Круг</button>
+          <button onclick="drawSquare()">Квадрат</button>
+          <button onclick="drawGoldenRectangle()">Золотой прямоугольник</button>
+          <button onclick="drawGoldenSpiral()">Золотая спираль</button>
+          <button onclick="clearCanvas()">Очистить</button>
+        </div>
+      </section>
+      <hr />
+
+      <section class="proportion-diagram">
+        <h2>Интерактивная диаграмма архитектурных пропорций</h2>
+        <svg width="500" height="300">
+          <rect
+            id="golden-section"
+            x="50"
+            y="50"
+            width="300"
+            height="180"
+            fill="gold"
+            stroke="black"
+          />
+          <rect
+            id="silver-section"
+            x="50"
+            y="50"
+            width="180"
+            height="180"
+            fill="silver"
+            stroke="black"
+          />
+          <text x="100" y="200" fill="black" id="label">
+            Наведи курсор для информации
+          </text>
+        </svg>
+      </section>
+      <hr />
+
+      <section class="calculator">
+        <h2>Калькулятор золотого сечения</h2>
+        <p>Введите число, и мы вычислим пропорцию по золотому сечению:</p>
+        <input type="number" id="inputNumber" placeholder="Введите число" />
+        <button onclick="calculateGoldenRatio()">Рассчитать</button>
+        <p id="goldenRatioResult"></p>
+      </section>
+    </main>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
